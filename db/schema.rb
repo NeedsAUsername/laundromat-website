@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180810005311) do
+ActiveRecord::Schema.define(version: 20180810181752) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "number"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20180810005311) do
     t.boolean  "paid_for"
     t.string   "comments"
     t.integer  "user_id"
+    t.boolean  "dropped_off"
   end
 
   create_table "users", force: :cascade do |t|
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 20180810005311) do
     t.string "phone"
     t.string "preferences"
     t.string "password_digest"
+    t.string "email"
   end
 
 end
