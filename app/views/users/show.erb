@@ -1,1 +1,18 @@
 <h1>Welcome, <%= @user.name %></h1>
+<h4><a href="/logout">Log out</a></h4>
+
+<% if !@user.address || !@user.phone %>
+  <h3><a href="/edit">Make sure to fill in your account details</a></h3>
+<% else %>
+  <h2>Account Details</h2>
+  <p>Phone Number: <%= @user.phone %></p>
+  <p>Address: <%= @user.address %></p>
+  <p>Preferences: <%= @user.preferences %></p>
+  <h4><a href="/edit">Edit your account details</a></h4>
+<% end %>
+
+<h2>Current Order</h2>
+Current order will go here
+
+<h2>Order History</h2>
+Order history will go here

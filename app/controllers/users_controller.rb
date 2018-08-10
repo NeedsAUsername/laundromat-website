@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-
+# signup
   get '/signup' do
     if logged_in?
       redirect '/show'
@@ -14,6 +14,7 @@ class UsersController < ApplicationController
     redirect '/login'
   end
 
+# login
   get '/login' do
     if logged_in?
       redirect '/show'
@@ -33,6 +34,7 @@ class UsersController < ApplicationController
     end
   end
 
+#account page
   get '/show' do
     if logged_in?
       @user = current_user
@@ -40,6 +42,30 @@ class UsersController < ApplicationController
     else
       redirect '/login'
     end
+  end
+
+  get '/edit' do
+    if logged_in?
+      @user = current_user
+      erb :'/users/edit'
+    else
+      redirect '/login'
+    end
+  end
+
+  post '/show' do
+    @user = current_user
+    @user.update(params[:user])
+    @user.save
+    erb :'users/show'
+  end
+
+
+
+#logout
+  get '/logout' do
+    session.clear
+    redirect '/'
   end
 
 end
