@@ -12,5 +12,5 @@ users can have address, name, phone info, specific requirements
 orders can have weight, price, time, paid_for, picked_up
 users can only see and change their own orders.
 
-master_user(laundromat) change change orders and assign them to users. can view all users and all orders.
+master_user(laundromat) can view all users and all orders and assign paid_for and picked_up values.
 admin attribute true/false

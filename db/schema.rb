@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20180810005311) do
     t.string "address"
     t.string "phone"
     t.string "preferences"
+    t.string "password_digest"
   end
 
 end
