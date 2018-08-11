@@ -28,7 +28,11 @@ class UsersController < ApplicationController
 
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect '/show'
+      if ready?
+        redirect '/show'
+      else
+        redirect '/edit'
+      end
     else
       redirect 'login'
     end

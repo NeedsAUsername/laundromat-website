@@ -28,5 +28,10 @@ class ApplicationController < Sinatra::Base
     def admin?
       !!current_user.admin
     end
+
+    def ready?
+      !!current_user.phone && !!current_user.address
+    end
+
   end
 end

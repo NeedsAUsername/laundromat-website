@@ -26,3 +26,5 @@ no two same emails on sign up
 -use flash messages? popup messages?
 
 users cant change order once picked up .
+
+in order comments, have value as the user's preferences. 
