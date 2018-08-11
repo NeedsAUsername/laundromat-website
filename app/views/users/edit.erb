@@ -1,6 +1,7 @@
 <h1>Edit your account details</h1>
 
 <form action="/show" method="post">
+<input type="hidden" id="hidden" name="_method" value="PATCH">
 <h3>Address: <input type="text" name="user[address]" value="<%= @user.address %>"></h3>
 <h3>Phone Number: <input type="text" name="user[phone]" value="<%= @user.phone %>"></h3>
 <h3>Preferences: <input type="text" name="user[preferences]" value="<%= @user.preferences %>"></h3>

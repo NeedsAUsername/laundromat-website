@@ -6,6 +6,8 @@
 <h4>Picked up? <%= @order.picked_up ? "yes" : "no"%></h4>
 <h4>Dropped off? <%= @order.dropped_off ? "yes" : "no"%></h4>
 <h4>Paid for? <%= @order.paid_for ? "yes" : "no"%></h4>
+<h4>Address: <%= @order.user.address %></h4>
+<h4>Phone Number: <%= @order.user.phone %></h4>
 <h4>Comments: <%= @order.comments %></h4>
 
 <h4><a href="/show">Back to your account page</a></h4>

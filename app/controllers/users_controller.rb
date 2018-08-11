@@ -53,7 +53,7 @@ class UsersController < ApplicationController
     end
   end
 
-  post '/show' do
+  patch '/show' do
     @user = current_user
     @user.update(params[:user])
     @user.save
