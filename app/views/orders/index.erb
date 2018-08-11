@@ -2,5 +2,5 @@
 
 <h1>All Orders</h1>
 <% Order.all.each do |order| %>
-  <p><a href="/orders/<%= order.id %>"><%= order.number %></a></p>
+  <p><a href="/orders/<%= order.id %>"><%= order.number %> <%= order.date_made %></a></p>
 <% end %>

@@ -11,16 +11,21 @@
   <h4><a href="/edit">Edit your account details</a></h4>
 <% end %>
 
-<h2>Current Order</h2>
-<a href="/request">Request an order</a>
+<% if !@user.admin %>
+  <h2>Current Order</h2>
+  <a href="/request">Request an order</a>
 
 
-<h2>Order History</h2>
+  <h2>Order History</h2>
 
-<% @user.orders.each do |order| %>
-  <% if order.dropped_off %>
-    <ul>
-      <li><a href="/orders/<%= order.id %>"><%= order.number %></a></li>
-    </ul>
+  <% @user.orders.each do |order| %>
+    <% if order.dropped_off %>
+      <ul>
+        <li><a href="/orders/<%= order.id %>"><%= order.number %></a></li>
+      </ul>
+    <% end %>
   <% end %>
+
+  <% else %>
+    <a href="/orders">View all orders</a>
 <% end %>
