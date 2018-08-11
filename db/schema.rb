@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180810181752) do
+ActiveRecord::Schema.define(version: 20180811004020) do
 
   create_table "orders", force: :cascade do |t|
     t.integer  "number"
@@ -26,12 +26,13 @@ ActiveRecord::Schema.define(version: 20180810181752) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "phone"
-    t.string "preferences"
-    t.string "password_digest"
-    t.string "email"
+    t.string  "name"
+    t.string  "address"
+    t.string  "phone"
+    t.string  "preferences"
+    t.string  "password_digest"
+    t.string  "email"
+    t.boolean "admin"
   end
 
 end

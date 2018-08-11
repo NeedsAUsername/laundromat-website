@@ -1,0 +1,6 @@
+<a href="/show">Back to account page</a>
+
+<h1>All Orders</h1>
+<% Order.all.each do |order| %>
+  <p><a href="/orders/<%= order.id %>"><%= order.number %></a></p>
+<% end %>
