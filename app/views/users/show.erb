@@ -12,7 +12,15 @@
 <% end %>
 
 <h2>Current Order</h2>
-Current order will go here
+<a href="/request">Request an order</a>
+
 
 <h2>Order History</h2>
-Order history will go here
+
+<% @user.orders.each do |order| %>
+  <% if order.dropped_off %>
+    <ul>
+      <li><a href="/orders/<%= order.id %>"><%= order.number %></a></li>
+    </ul>
+  <% end %>
+<% end %>
