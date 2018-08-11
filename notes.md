@@ -18,6 +18,7 @@ admin attribute true/false
   -finalizes the weight and price upon pickup
 
 
+make better time input.
 
 make cases for :
 

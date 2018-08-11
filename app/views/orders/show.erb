@@ -1,3 +1,11 @@
-<h1>Order #<%= @order.number %></h1>
+<h1>Order #<%= @order.number %>  <%= @order.date_made %></h1>
 
-More details.  
+<h4>Ordered by: <%= @order.user.name %></h4>
+<h4>Weight: <%= @order.weight %> lbs</h4>
+<h4>Price: $<%= @order.price %></h4>
+<h4>Picked up? <%= @order.picked_up ? "yes" : "no"%></h4>
+<h4>Dropped off? <%= @order.dropped_off ? "yes" : "no"%></h4>
+<h4>Paid for? <%= @order.paid_for ? "yes" : "no"%></h4>
+<h4>Comments: <%= @order.comments %></h4>
+
+<h4><a href="/show">Back to your account page</a></h4>
