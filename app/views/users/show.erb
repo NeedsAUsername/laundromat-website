@@ -10,9 +10,18 @@
 
 
 <% if !@user.admin %>
-  <h2>Current Order</h2>
-  <a href="/request">Request a pickup</a>
 
+  <h1>Pending Requests</h1>
+  <% @user.requests.each do |re
+  <a href="/requests/new">Request a pickup</a>
+
+  <h2>Current Orders</h2>
+  <% if !order.dropped_off %>
+    <ul>
+      <li><a href="/orders/<%= order.id %>"><%= order.number %></a></li>
+    </ul>
+  <% end %>
+<% end %>
 
   <h2>Order History</h2>
 

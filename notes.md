@@ -27,4 +27,6 @@ no two same emails on sign up
 
 users cant change order once picked up .
 
-in order comments, have value as the user's preferences. 
+in order comments, have value as the user's preferences.
+
+after request is confirmed, and changed into an order, clear the request from the database.

@@ -8,4 +8,5 @@ use Rack::MethodOverride
 
 use OrdersController
 use UsersController
+use RequestsController
 run ApplicationController
