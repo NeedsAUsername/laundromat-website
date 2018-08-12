@@ -12,19 +12,23 @@
 <% if !@user.admin %>
 
   <h1>Pending Requests</h1>
-  <% @user.requests.each do |re
-  <a href="/requests/new">Request a pickup</a>
+  <% @user.requests.each do |request| %>
+    <ul>
+      <li><a href="/requests/<%= request.id %>"><%= request.date %></a></li>
+    </ul>
+  <a href="/requests/new">schedule a pickup</a>
+  <% end %>
 
   <h2>Current Orders</h2>
-  <% if !order.dropped_off %>
-    <ul>
-      <li><a href="/orders/<%= order.id %>"><%= order.number %></a></li>
-    </ul>
+  <% @user.orders.each do |order| %>
+    <% if !order.dropped_off %>
+      <ul>
+        <li><a href="/orders/<%= order.id %>"><%= order.number %></a></li>
+      </ul>
+    <% end %>
   <% end %>
-<% end %>
 
   <h2>Order History</h2>
-
   <% @user.orders.each do |order| %>
     <% if order.dropped_off %>
       <ul>
