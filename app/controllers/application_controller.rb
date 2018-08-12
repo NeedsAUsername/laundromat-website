@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
 
   configure do
     enable :sessions
-    set :session_secret, "secret"
+    set :session_secret, "this_protects_users"
   end
 
   get '/' do
