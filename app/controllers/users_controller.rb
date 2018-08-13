@@ -64,6 +64,21 @@ class UsersController < ApplicationController
     erb :'users/show'
   end
 
+# admin privileges
+
+  get '/users/:id' do
+    if logged_in?
+      if admin?
+        @user = User.find(params[:id])
+        erb :'users/inspect'
+      else
+        redirect '/show'
+      end
+    else
+      redirect 'login'
+    end
+  end
+
 
 
 #logout
