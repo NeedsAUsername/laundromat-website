@@ -1,1 +1,10 @@
-Edit Request
+<h1>Edit request</h1>
+
+<form class="" action="/requests/<%= @user_request.id %>/patch" method="post">
+  <input type="hidden" id="hidden" name="_method" value="PATCH">
+  <p>Pickup date: <input type="date" name="request[date]" value="<%= @user_request.date %>" required></p>
+  <p>Address: <input type="text" name="request[address]" value="<%= @user_request.address %>" required></p>
+  <p>Phone number: <input type="text" name="request[phone]" value="<%= @user_request.phone %>" required></p>
+  <p>Comments: <input type="text" name="request[comments]" value="<%= @user_request.comments %>"></p>
+  <input type="submit" value="Submit Request">
+</form>
