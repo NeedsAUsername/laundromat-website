@@ -29,4 +29,11 @@ class RequestsController < ApplicationController
     end
   end
 
+  delete '/requests/:id/delete' do
+    @user_request = Request.find(params[:id])
+    @user_request.delete
+
+    redirect '/show'
+  end
+
 end

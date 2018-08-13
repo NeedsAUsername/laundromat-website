@@ -1,11 +1,19 @@
 
 
-<h4>Here is your request scheduled for <%= @user_request.date %></h4>
-<h4><%= @user_request.address %></h4>
-<h4><%= @user_request.phone %></h4>
-<h4><%= @user_request.comments %></h4>
+<h4>Your request for pickup is scheduled for <%= @user_request.date %></h4>
+<a href="/requests/<%= @user_request.id %>edit">Edit request</a>
+<h4>Address: <%= @user_request.address %></h4>
+<h4>Phone: <%= @user_request.phone %></h4>
+<h4>Comments : <%= @user_request.comments %></h4>
 
-Edit link here
-Delete link here
 
+
+
+<form class="" action="/requests/<%= @user_request.id %>/delete" method="post">
+<input type="hidden" id="hidden" name="_method" value="DELETE">
+<input type="submit" value="Delete request">
+</form>
+
+
+<br><br>
 <a href="/show">Back to your account</a>
