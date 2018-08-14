@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   post '/signup' do
     if User.find_by(email: params[:user][:email])
-      flash[:alert] = "That email is taken."
+      flash[:message] = "That email is taken."
       redirect '/signup'
     else
       @user = User.create(params[:user])
@@ -39,6 +39,7 @@ class UsersController < ApplicationController
         redirect '/edit'
       end
     else
+      flash[:message] = "Those are not valid credentials. Try again."
       redirect 'login'
     end
   end
