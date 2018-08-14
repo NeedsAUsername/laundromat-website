@@ -2,6 +2,8 @@ require './config/environment'
 
 class ApplicationController < Sinatra::Base
 
+  register Sinatra::Flash
+
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
@@ -17,7 +19,7 @@ class ApplicationController < Sinatra::Base
       redirect '/login'
     else
       erb :index
-    end 
+    end
   end
 
   helpers do
