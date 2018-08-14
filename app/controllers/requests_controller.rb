@@ -1,5 +1,7 @@
 class RequestsController < ApplicationController
 
+
+# Admin privileges
   get '/requests' do
     if admin?
       @requests = Request.all
@@ -9,6 +11,28 @@ class RequestsController < ApplicationController
     end
   end
 
+  post '/requests/:id/action' do
+    if admin?
+      @user_request = Request.find(params[:id])
+      if params[:action] == "create"
+        @order = Order.new()
+        @order.user = @user_request.user
+        @order.comments = @user_request.comments
+        @order.date_made = @user_request.date
+        @order.save
+        @user_request.delete
+
+        redirect "/orders/#{@order.id}/edit"
+
+      elsif params[:action] == "delete"
+        @user_request.delete
+        redirect '/requests'
+      end
+    end
+  end
+
+
+# User privileges
   get '/requests/new' do
     if logged_in?
       @user = current_user

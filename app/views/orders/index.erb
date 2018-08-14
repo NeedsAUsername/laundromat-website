@@ -10,7 +10,7 @@
   <th>Comments</th>
   <% Order.all.sort_by{|order| order.date_made}.reverse.each do |order| %>
     <tr>
-      <td><%= order.number %></td>
+      <td><a href="/orders/<%= order.id %>"><%= order.number %></a></td>
       <td><a href="/users/<%= order.user.id %>"><%= order.user.name %></a></td>
       <td><%= order.date_made %></td>
       <td><%= order.weight %></td>

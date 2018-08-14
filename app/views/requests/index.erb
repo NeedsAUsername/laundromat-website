@@ -1,3 +1,4 @@
+<a href="/show">Back to account page</a>
 
 <h1>Current Requests For Pickup</h1>
 
@@ -12,11 +13,13 @@
       <td><%= request.date %></td>
       <td><%= request.comments %></td>
       <td>
-        <select name="status">
+        <form action="/requests/<%=request.id%>/action" method="post">
+        <select name="action">
           <option value="create">Create Order</option>
           <option value="delete">Delete Request</option>
           <input type="submit" value="Submit">
         </select>
+        </form>
       </td>
     </tr>
   <% end %>
