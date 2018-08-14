@@ -12,6 +12,21 @@ class OrdersController < ApplicationController
     end
   end
 
+  post '/orders/:id/status' do
+    if logged_in?
+      if admin?
+        @order = Order.find(params[:id])
+        @order.dropped_off = params[:status]
+        @order.save
+        redirect '/orders'
+      else
+        redirect '/show'
+      end
+    else
+      redirect '/login'
+    end
+  end
+
   get '/orders/:id/edit' do
     if logged_in?
       if admin?
@@ -31,7 +46,7 @@ class OrdersController < ApplicationController
     @order.save
 
     redirect '/orders'
-  end 
+  end
 
   post '/orders' do
     @order = Order.create(params[:order])

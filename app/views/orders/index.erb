@@ -9,7 +9,8 @@
   <th>Weight</th>
   <th>Price</th>
   <th>Comments</th>
-  <th>Make changes</th>
+  <th>Make Changes</th>
+  <th>Dropped Off?</th>
   <% Order.all.sort_by{|order| order.date_made}.reverse.each do |order| %>
     <% if !order.dropped_off %>
       <tr>
@@ -20,6 +21,20 @@
         <td><%= order.price %></td>
         <td><%= order.comments %></td>
         <td><button><a href="/orders/<%= order.id %>/edit">Edit Order</a></button></td>
+        <td>
+          <form class="" action="/orders/<%=order.id%>/status" method="post">
+          <select name="status">
+            <option value="true">Yes</option>
+            <option
+              <% if !order.dropped_off %>
+                <%= selected="selected" %>
+              <% end %>
+              value="false">No
+            </option>
+          </select>
+          <input type="submit" value="save">
+          </form>
+        </td>
       </tr>
     <% end %>
   <% end %>
@@ -36,6 +51,7 @@
   <th>Price</th>
   <th>Comments</th>
   <th>Make changes</th>
+  <th>Dropped Off?</th>
   <% Order.all.sort_by{|order| order.date_made}.reverse.each do |order| %>
     <% !!if order.dropped_off %>
       <tr>
@@ -46,6 +62,20 @@
         <td><%= order.price %></td>
         <td><%= order.comments %></td>
         <td><button><a href="/orders/<%= order.id %>/edit">Edit Order</a></button></td>
+        <td>
+          <form class="" action="/orders/<%=order.id%>/status" method="post">
+          <select name="status">
+            <option value="true">Yes</option>
+            <option
+              <% if !order.dropped_off %>
+                <%= selected="selected" %>
+              <% end %>
+              value="false">No
+            </option>
+          </select>
+          <input type="submit" value="save">
+          </form>
+        </td>
       </tr>
     <% end %>
   <% end %>
