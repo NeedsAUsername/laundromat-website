@@ -23,7 +23,7 @@
   <% @user.orders.each do |order| %>
     <% if !order.dropped_off %>
       <ul>
-        <li><a href="/orders/<%= order.id %>"><%= order.number %></a></li>
+        <li><a href="/orders/<%= order.id %>"><%= order.date_made %></a></li>
       </ul>
     <% end %>
   <% end %>
@@ -37,7 +37,7 @@
     <% end %>
   <% end %>
 
-<!-- admin sees below -->
+<!-- admin privileges -->
   <% else %>
     <a href="/requests">View all requests</a>
     <br><br>

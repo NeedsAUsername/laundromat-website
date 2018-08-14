@@ -5,12 +5,14 @@
 <table>
   <th>Customer Name</th>
   <th>Pickup Date</th>
+  <th>Address</th>
   <th>Comments</th>
   <th>Create Order/Delete Request</th>
   <% Request.all.sort_by{|request| request.date}.reverse.each do |request| %>
     <tr>
       <td><a href="/users/<%= request.user.id %>"><%= request.user.name %></a></td>
       <td><%= request.date %></td>
+      <td><%= request.address %></td>
       <td><%= request.comments %></td>
       <td>
         <form action="/requests/<%=request.id%>/action" method="post">

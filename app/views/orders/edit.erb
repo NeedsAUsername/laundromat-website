@@ -1,10 +1,10 @@
-<h1>Finalize the order for <%= @order.user.name %></h1>
+<h1>Edit the order for <%= @order.user.name %></h1>
 
 <form action="/orders/<%= @order.id %>" method="post">
-  <p>Order Number: <input type="text" name="order[number]" required></p>
-  <p>Weight: <input type="text" name="order[weight]" required></p>
-  <p>Price: <input type="text" name="order[price]" required></p>
+  <p>Order Number: <input type="text" name="order[number]" value="<%= @order.number %>" required></p>
+  <p>Weight: <input type="text" name="order[weight]" value="<%= @order.weight %>" required></p>
+  <p>Price: <input type="text" name="order[price]" value="<%= @order.price %>" required></p>
   <p>Date Made: <input type="text" name="order[date_made]" value="<%= @order.date_made %>" required></p>
-  <p>Comments: <input type="text" name="order[comments]" value="<%= @order.comments %>" required></p>
+  <p>Comments: <input type="text" name="order[comments]" value="<%= @order.comments %>"></p>
   <input type="submit" value="save">
 </form>
