@@ -1,11 +1,23 @@
 
 <h1>Current Requests For Pickup</h1>
 
-<ul>
-<% @requests.each do |request| %>
-  <li>
-    <a href="/users/<%= request.user.id %>"><%= request.user.name %></a> requests a pickup on <%= request.date %> Comments: <%= request.comments %>
-    <a href="orders/new">Create a new order using this request</a>
-  </li>
-<% end %>
-</ul>
+<table>
+  <th>Customer Name</th>
+  <th>Pickup Date</th>
+  <th>Comments</th>
+  <th>Create Order/Delete Request</th>
+  <% Request.all.sort_by{|request| request.date}.reverse.each do |request| %>
+    <tr>
+      <td><a href="/users/<%= request.user.id %>"><%= request.user.name %></a></td>
+      <td><%= request.date %></td>
+      <td><%= request.comments %></td>
+      <td>
+        <select name="status">
+          <option value="create">Create Order</option>
+          <option value="delete">Delete Request</option>
+          <input type="submit" value="Submit">
+        </select>
+      </td>
+    </tr>
+  <% end %>
+</table>
