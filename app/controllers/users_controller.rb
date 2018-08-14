@@ -10,8 +10,12 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
-    @user = User.create(params[:user])
-    redirect '/login'
+    if User.find_by(email: params[:user][:email])
+      redirect '/signup'
+    else
+      @user = User.create(params[:user])
+      redirect '/login'
+    end
   end
 
 # login
