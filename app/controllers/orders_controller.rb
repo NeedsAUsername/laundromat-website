@@ -15,7 +15,7 @@ class OrdersController < ApplicationController
   get '/orders/new' do
     if logged_in?
       if admin?
-        erb :'users/new'
+        erb :'orders/new'
       else
         redirect 'show'
       end
@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
   post '/orders' do
     @order = Order.create(params[:order])
     redirect "/orders/#{@order.id}"
-  end 
+  end
 
   get '/orders/:id' do
     if logged_in?

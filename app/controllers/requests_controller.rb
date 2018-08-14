@@ -1,9 +1,20 @@
 class RequestsController < ApplicationController
 
+  get '/requests' do
+    if admin?
+      @requests = Request.all
+      erb :'requests/index'
+    else
+      redirect '/'
+    end
+  end
+
   get '/requests/new' do
     if logged_in?
       @user = current_user
       erb :'requests/new'
+    else
+      redirect '/login'
     end
   end
 
@@ -39,7 +50,7 @@ class RequestsController < ApplicationController
       end
     else
       redirect 'login'
-    end 
+    end
   end
 
   patch '/requests/:id/patch' do

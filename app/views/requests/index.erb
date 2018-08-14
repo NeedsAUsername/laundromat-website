@@ -1,0 +1,11 @@
+
+<h1>Current Requests For Pickup</h1>
+
+<ul>
+<% @requests.each do |request| %>
+  <li>
+    <a href="/users/<%= request.user.id %>"><%= request.user.name %></a> requests a pickup on <%= request.date %> Comments: <%= request.comments %>
+    <a href="orders/new">Create a new order using this request</a>
+  </li>
+<% end %>
+</ul>
