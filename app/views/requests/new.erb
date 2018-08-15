@@ -1,6 +1,6 @@
 <h1>Request a pickup</h1>
 <form class="" action="/requests" method="post">
-  <p>Pickup date: <input type="date" name="request[date]" required></p>
+  <p>Pickup date: <input type="date" name="request[date]" min="<%= Date.today + 1 %>" required></p>
   <p>Address: <input type="text" name="request[address]" value="<%= @user.address %>" required></p>
   <p>Phone number: <input type="text" name="request[phone]" value="<%= @user.phone %>" required></p>
   <p>Comments: <input type="text" name="request[comments]" value="<%= @user.preferences %>"></p>
