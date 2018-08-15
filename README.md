@@ -11,7 +11,7 @@ In the website:
   Customers can then log in to their account.
 
   The delivery and drop-off process:
-    Customers schedules a pickup.
+    A customer schedules a pickup.
     The admin can view all requests for pickup.
     The laundromat sends someone to pick up the customer's clothing on the requested pick-up date.
     The admin then creates an order through the request page with the weight and price information.
