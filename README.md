@@ -2,7 +2,7 @@ This project aims to develop a functional website for laundromat/dry-cleaner own
 
 *How it works*
 
-Create an admin through the database (this account will be used by the laundromat).
+Create an admin through the database (this account will be used by the business).
   rake console or tux in terminal.
   User.create(name: your_name, email: your_email, password: your_password, admin: true)
 
