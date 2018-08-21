@@ -10,6 +10,10 @@ class UsersController < ApplicationController
   end
 
   post '/signup' do
+    if params[:user][:email].empty? || params[:user][:name].empty? || params[:user][:password].empty?
+      flash[:message] = "Fill out all fields."
+      redirect '/signup'
+    end
     if User.find_by(email: params[:user][:email])
       flash[:message] = "That email is taken."
       redirect '/signup'
