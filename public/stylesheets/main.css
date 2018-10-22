@@ -16,6 +16,7 @@ tr:nth-child(even) {
 
 html, body {
   background-color: lightblue;
+  box-sizing: border-box;
 }
 .container {
   display: block;
@@ -25,4 +26,10 @@ html, body {
   border-color: green;
   width: 50%;
   background-color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+    .container {
+      width: 100%;
+    }
 }
