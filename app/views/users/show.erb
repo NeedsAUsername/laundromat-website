@@ -1,13 +1,17 @@
-<h1>Welcome, <%= @user.name %></h1>
-<h4><a href="/logout">Log out</a></h4>
+
+<div class="welcome">
+  <h1>Welcome, <%= @user.name %></h1>
+  <h4><a href="/logout">Log out</a></h4>
+</div>
 
 
+<div class="account-details">
 <h2>Account Details</h2>
 <p>Phone Number: <%= @user.phone %></p>
 <p>Address: <%= @user.address %></p>
 <p>Preferences: <%= @user.preferences %></p>
 <h4><a href="/edit">Edit your account details</a></h4>
-
+</div>
 
 <% if !@user.admin %>
 
@@ -43,3 +47,4 @@
     <br><br>
     <a href="/orders">View all orders</a>
 <% end %>
+</container>
