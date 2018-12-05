@@ -1,4 +1,7 @@
 This project aims to develop a functional website for laundromat/dry-cleaner owners with a delivery/drop-off service.
+* Set Up *
+Run bundle 
+Run rackup
 
 * Website Guide *
 
