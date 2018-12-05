@@ -1,14 +1,12 @@
 This project aims to develop a functional website for laundromat/dry-cleaner owners with a delivery/drop-off service.
 
-*How it works*
+* Website Guide *
 
-Create an admin through the database (this account will be used by the business).
-  rake console or tux in terminal.
-  User.create(name: your_name, email: your_email, password: your_password, admin: true)
-
-In the website:
-  Customers can create an account by signing up on the main page.
-  Customers can then log in to their account.
+quick login as admin: 
+  email: admin@admin.com, password: pass 
+  
+quick login as customer: 
+  email: customer@customer.com, password: pass  
 
   The delivery and drop-off process:
     A customer schedules a pickup.
@@ -20,3 +18,11 @@ In the website:
     The admin can see all orders, and notes the order as dropped off.
     The order moves from the admin's current orders to past orders.
     The order moves from the customer's current orders to their order history.
+
+
+
+*Extras*
+
+Create an admin through the database (this account will be used by the business).
+  rake console or tux in terminal.
+  User.create(name: your_name, email: your_email, password: your_password, admin: true)
